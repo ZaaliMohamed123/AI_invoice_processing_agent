@@ -60,11 +60,11 @@ def extract_text_from_pdf(pdf_path: str) -> str:
         
         return clean_text(full_text)
         
-    except pdfplumber.pdfminer.pdfparser.PDFSyntaxError as e:
-        raise PDFExtractionError(f"Invalid or corrupt PDF file: {e}")
     except Exception as e:
         if isinstance(e, PDFExtractionError):
             raise
+        if "PDFSyntaxError" in type(e).__name__:
+            raise PDFExtractionError(f"Invalid or corrupt PDF file: {e}")
         raise PDFExtractionError(f"Failed to extract text from PDF: {e}")
 
 
