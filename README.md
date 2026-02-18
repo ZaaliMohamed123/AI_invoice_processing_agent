@@ -67,7 +67,7 @@ AI_invoice_processing_agent/
 3. **Configure API Keys**
    - Open `.env`, fill in:
      ```ini
-     OPENAI_API_KEY=sk-...
+     OPENAI_API_KEY=...
      OPENAI_BASE_URL=https://api.openai.com/v1
      GMAIL_ADDRESS=your-gmail@gmail.com
      GMAIL_APP_PASSWORD=your-app-password
